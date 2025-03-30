@@ -12,6 +12,13 @@ router.get('/', (_req, res) => {
   res.send(patientService.getNonSensitiveEntries());
 })
 
+router.get('/:id', (req, res) => {
+  const patientId = req.params.id;
+  const patients = patientService.getNonSensitiveEntries();
+  const patient = patients.filter(patient => patient.id === patientId);
+  res.send(patient);
+})
+
 // middleware
 const newPatientParser = (req: Request, _res: Response, next: NextFunction) => {
   try {
