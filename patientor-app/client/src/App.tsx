@@ -37,7 +37,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<PatientListPage patients={patients} setPatients={setPatients} />} />
             {patients.map((p) => (
-              <Route path={`/:${p.id}`} element={<PatientPage patient={p} />} />
+              <Route path={`/${p.id}`} element={<PatientPage id={p.id} />} />
             ))}
           </Routes>
         </Container>

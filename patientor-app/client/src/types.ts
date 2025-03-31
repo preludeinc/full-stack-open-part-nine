@@ -37,6 +37,10 @@ export interface Patient {
   entries: Entry[];
 }
 
+export interface PartProps {
+  entry: Entry;
+}
+
 export interface BaseEntry {
   id: string;
   description: string;
